@@ -84,7 +84,7 @@ class PlgSystemBootstrap3 extends JPlugin
 			$opt['wrap']     = isset($params['wrap']) ? (bool) $params['wrap'] : true;
 			$opt['keyboard']     = isset($params['keyboard']) ? (bool) $params['keyboard'] : true;
 
-			$options = JHtml::getJSObject($opt);
+			$options = json_encode($opt);
 
 			// Attach the carousel to document
 			JFactory::getDocument()->addScriptDeclaration(
