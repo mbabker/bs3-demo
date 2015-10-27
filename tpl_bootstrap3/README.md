@@ -1,4 +1,4 @@
-# Bootstrap 3 trmplate example for Joomla 3
+# Bootstrap 3 template example for Joomla 3
 
 ## Info
 It's a simple-simple template, based on BS2 Jommla's protostar
