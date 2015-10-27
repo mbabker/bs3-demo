@@ -9,21 +9,85 @@
 	<authorEmail>michael.babker@gmail.com</authorEmail>
 	<authorUrl>michaels.website</authorUrl>
 	<version>1.0.0</version>
-	<description>Demo Bootstrap 3 template with JHtml overrides</description>
+	<description>TPL_BS3DEMO_XML_DESCRIPTION</description>
 	<files>
+		<filename>index.html</filename>
 		<filename>index.php</filename>
 		<filename>templateDetails.xml</filename>
 		<folder>css</folder>
 		<folder>fonts</folder>
+		<folder>html</folder>
 		<folder>js</folder>
+		<folder>language</folder>
 	</files>
 	<positions>
-		<position>after-component</position>
-		<position>before-component</position>
+		<position>banner</position>
 		<position>debug</position>
+		<position>position-0</position>
+		<position>position-1</position>
+		<position>position-2</position>
+		<position>position-3</position>
+		<position>position-4</position>
+		<position>position-5</position>
+		<position>position-6</position>
+		<position>position-7</position>
+		<position>position-8</position>
+		<position>position-9</position>
+		<position>position-10</position>
+		<position>position-11</position>
+		<position>position-12</position>
+		<position>position-13</position>
+		<position>position-14</position>
 		<position>footer</position>
-		<position>left-sidebar</position>
-		<position>right-sidebar</position>
-		<position>top-nav</position>
 	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_bootstrap3.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_bootstrap3.sys.ini</language>
+	</languages>
+	<config>
+	    <fields name="params">
+	        <fieldset name="advanced">
+	            <field name="logoFile" class="" type="media" default=""
+					label="TPL_BS3DEMO_LOGO_LABEL"
+					description="TPL_BS3DEMO_LOGO_DESC" />
+                <field name="sitetitle"  type="text" default=""
+					label="JGLOBAL_TITLE"
+					description="JFIELD_ALT_PAGE_TITLE_LABEL"
+					filter="string" />
+                <field name="fluidContainer"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    label="TPL_BS3DEMO_FLUID_LABEL"
+                    description="TPL_BS3DEMO_FLUID_DESC"
+                >
+                    <option value="1">TPL_BS3DEMO_FLUID</option>
+                    <option value="0">TPL_BS3DEMO_STATIC</option>
+                </field>
+                <field name="navbarType"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                    label="TPL_BS3DEMO_NAVBARTYPE_LABEL"
+                    description="TPL_BS3DEMO_NAVBARTYPE_DESC"
+                >
+                    <option value="1">TPL_BS3DEMO_NAVBAR_DEFAULT</option>
+                    <option value="0">TPL_BS3DEMO_NAVBAR_INVERSE</option>
+                </field>
+                <field name="navbarFixedType"
+                    type="list"
+                    class=""
+                    default="0"
+                    label="TPL_BS3DEMO_NAVBARFIXTYPE_LABEL"
+                    description="TPL_BS3DEMO_NAVBARFIXTYPE_DESC"
+                >
+                    <option value="0">TPL_BS3DEMO_NAVBAR_FIXED_DEFAULT</option>
+                    <option value="1">TPL_BS3DEMO_NAVBAR_FIXED_TOP</option>
+                    <option value="2">TPL_BS3DEMO_NAVBAR_FIXED_BOTTOM</option>
+                    <option value="3">TPL_BS3DEMO_NAVBAR_STATIC_TOP</option>
+                </field>
+	        </fieldset>
+	        
+	    </fields>
+	</config>
 </extension>
