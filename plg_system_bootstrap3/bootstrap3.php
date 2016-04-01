@@ -55,6 +55,11 @@ class PlgSystemBootstrap3 extends JPlugin
 		{
 			JHtml::register('calendar', 'PlgSystemBootstrap3::calendar');
 		}
+		
+		if (!JHtml::isRegistered('bootstrap.modal'))
+		{		
+			JHtml::register('bootstrap.modal', 'PlgSystemBootstrap3::modal');
+		}
 	}
 	
 	/**
@@ -188,6 +193,74 @@ class PlgSystemBootstrap3 extends JPlugin
 			static::$loaded[__METHOD__][$sig] = true;
 		}
 
+		return;
+	}
+	
+	public static function modal($params)
+	{	
+		$name = isset($params['name']) ? $params['name'] : 'frmModal';
+		$content = isset($params['content']) ? $params['content'] : 'Modal content';
+		$titletag = isset($params['titletag']) ? $params['titletag'] : '<h3/>';
+		$title = isset($params['title']) ? $params['title'] : 'Title';
+		
+		// Include jQuery
+		JHtml::_('jquery.framework');
+		JFactory::getDocument()->addScriptDeclaration("
+	jQuery(document).ready(function (){
+		//Main content element
+            var content = 
+                jQuery('<div/>',{
+                        class:  'modal-content'
+                    }).append(
+                        jQuery('<div/>',{
+                            class:  'modal-header'
+                        }).append(
+                            jQuery('<button/>',{
+                                type:           'button',
+                                class:          'close',
+                                'data-dismiss': 'modal',
+                                'aria-label':   'Close'
+                            }).append(
+                                jQuery('<span/>',{
+                                    'aria-hidden': 'true'
+                                })
+                            ).html('&times;')
+                        ).append(
+                            jQuery('$titletag',{
+                                class:  'modal-title',
+                                id:     '{$name}Label'
+                            }).html('$title')
+                        )
+                    ).append(
+                        jQuery('<div/>',{
+                            class: 'modal-body'                            
+                        }).html('$content')
+                    );
+		var modalDiv = jQuery('<div/>',{
+			class:              'modal fade',
+			id:                 '$name',
+			tabindex:           '-1',
+			role:               'dialog',
+			'aria-labelledby':  '{$name}Label'
+		}).css({
+                        'text-align': 'center'
+                    }).append(
+		jQuery('<div/>',{
+			class:  'modal-dialog',
+			role:   'document'
+		}).append(
+			content
+			).css({
+                'max-width': '100%',
+                width: 'auto',
+                display: 'inline-block'
+            })
+		);
+
+		//Insert modal to DOM
+		jQuery('body').append(modalDiv);
+	});
+		");				
 		return;
 	}
 

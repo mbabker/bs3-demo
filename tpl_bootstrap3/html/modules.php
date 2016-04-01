@@ -14,7 +14,7 @@
  * for each given modChrome function.
  *
  * eg.  To render a module mod_test in the bstrap style, you would use the following include:
- * <jdoc:include type="module" name="test" style="bstrap" />
+ * <jdoc:include type="module" name="test" style="bsrow" />
  *
  * This gives template designers ultimate control over how modules are rendered.
  *
@@ -25,17 +25,32 @@
 /*
  * Module chrome for rendering the module in a bstrap
  */
-function modChrome_bstrap($module, &$params, &$attribs)
-{
+function modChrome_bsrow($module, &$params, &$attribs)
+{    
     if ($module->content) : ?>
         <div class="row module<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
             <?php if ($module->showtitle != 0) : ?>
-            <div class="col-xs-12 moduleheader"><h3><?php echo $module->title; ?></h3></div>
+            <div class="col-xs-12 moduleheader"><?php echo "<{$params->get('header_tag')}>{$module->title}</{$params->get('header_tag')}>"; ?></div>
             <?php endif; ?>
             <div class="col-xs-12 modulecontent">
                 <?php echo $module->content; ?>
             </div>
         </div>
+    <?php endif;
+}
+function modChrome_bscol($module, &$params, &$attribs)
+{    
+    if ($module->content) : ?>
+        <<?php echo $params->get('module_tag'); ?> class="col-xs-<?php echo $params->get('bootstrap_size'); ?> module<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
+            <div class="row">
+                <?php if ($module->showtitle != 0) : ?>
+                <div class="col-xs-12 moduleheader"><?php echo "<{$params->get('header_tag')}>{$module->title}</{$params->get('header_tag')}>"; ?></div>
+                <?php endif; ?>
+                <div class="col-xs-12 modulecontent">
+                    <?php echo $module->content; ?>
+                </div>
+            </div>
+        </<?php echo $params->get('module_tag'); ?>>
     <?php endif;
 }
 ?>

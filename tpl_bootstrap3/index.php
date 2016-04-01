@@ -55,7 +55,7 @@ else
 // Logo file or site title param
 if ($this->params->get('logoFile'))
 {
-	$logo = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" class="img-responsable" />';
+	$logo = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" class="img-responsive" />';
 }
 elseif ($this->params->get('sitetitle'))
 {
@@ -126,20 +126,20 @@ else
             </nav>
 			<?php endif; ?>
             <div class="row">
-                <jdoc:include type="modules" name="banner" style="bstrap" />
+                <jdoc:include type="modules" name="banner" style="bsrow" />
             </div>
             <main class="row" id="content_area">
                 <?php if ($this->countModules('position-8')) : ?>
                 <aside id="left-sidebar" class="col-sm-3">
                     <div class="row">
-                        <jdoc:include type="modules" name="position-8" style="bstrap" />
+                        <jdoc:include type="modules" name="position-8" style="bsrow" />
                     </div>
                 </aside>
 				<?php endif; ?>
                 <div id="main-body" class="<?php echo $span; ?>">
 					<!-- Begin Content -->
 					<div class="row">
-					    <jdoc:include type="modules" name="position-4" style="bstrap" />    
+					    <jdoc:include type="modules" name="position-4" style="bsrow" />    
 					</div>
 					<div class="row">
                         <div class="col-xs-12">
@@ -154,14 +154,14 @@ else
                         </div>
                     </div>
                     <div class="row">
-					    <jdoc:include type="modules" name="position-5" style="bstrap" />    
+					    <jdoc:include type="modules" name="position-5" style="bsrow" />    
 					</div>
 					<!-- End Content -->
 				</div>
                 <?php if ($this->countModules('position-7')) : ?>
                 <aside id="right-sidebar" class="col-sm-3">
                     <div class="row">
-                        <jdoc:include type="modules" name="position-7" style="bstrap" />
+                        <jdoc:include type="modules" name="position-7" style="bsrow" />
                     </div>
                 </aside>
 				<?php endif; ?>
