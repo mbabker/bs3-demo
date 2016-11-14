@@ -2,7 +2,7 @@
 /**
  * Bootstrap 3 Demo Template Package
  *
- * @site        http://mokh.in
+ * @site        http://mokhin-tech.ru
  * @e-mail      mokhin.denis@yandex.ru
  * @copyright   Copyright (C) 2015 Denis E Mokhin. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -27,10 +27,11 @@
  */
 function modChrome_bsrow($module, &$params, &$attribs)
 {    
+    $headerLevel = isset($attribs['headerLevel']) ? (int) $attribs['headerLevel'] : 3;
     if ($module->content) : ?>
         <div class="row module<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
             <?php if ($module->showtitle != 0) : ?>
-            <div class="col-xs-12 moduleheader"><?php echo "<{$params->get('header_tag')}>{$module->title}</{$params->get('header_tag')}>"; ?></div>
+            <div class="col-xs-12 moduleheader"><?php echo "<h{$headerLevel}>{$module->title}</h{$headerLevel}>"; ?></div>
             <?php endif; ?>
             <div class="col-xs-12 modulecontent">
                 <?php echo $module->content; ?>
@@ -40,11 +41,12 @@ function modChrome_bsrow($module, &$params, &$attribs)
 }
 function modChrome_bscol($module, &$params, &$attribs)
 {    
+    $headerLevel = isset($attribs['headerLevel']) ? (int) $attribs['headerLevel'] : 3;
     if ($module->content) : ?>
         <<?php echo $params->get('module_tag'); ?> class="col-xs-<?php echo $params->get('bootstrap_size'); ?> module<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
             <div class="row">
                 <?php if ($module->showtitle != 0) : ?>
-                <div class="col-xs-12 moduleheader"><?php echo "<{$params->get('header_tag')}>{$module->title}</{$params->get('header_tag')}>"; ?></div>
+                <div class="col-xs-12 moduleheader"><?php echo "<h{$headerLevel}>{$module->title}</h{$headerLevel}>"; ?></div>
                 <?php endif; ?>
                 <div class="col-xs-12 modulecontent">
                     <?php echo $module->content; ?>

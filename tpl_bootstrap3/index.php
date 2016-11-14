@@ -131,38 +131,29 @@ else
             <main class="row" id="content_area">
                 <?php if ($this->countModules('position-8')) : ?>
                 <aside id="left-sidebar" class="col-sm-3">
-                    <div class="row">
-                        <jdoc:include type="modules" name="position-8" style="bsrow" />
-                    </div>
+                    <jdoc:include type="modules" name="position-8" style="bsrow" />
                 </aside>
 				<?php endif; ?>
                 <div id="main-body" class="<?php echo $span; ?>">
 					<!-- Begin Content -->
-					<div class="row">
-					    <jdoc:include type="modules" name="position-4" style="bsrow" />    
-					</div>
+                    <jdoc:include type="modules" name="position-4" style="bsrow" />					
 					<div class="row">
                         <div class="col-xs-12">
                             <jdoc:include type="module" name="breadcrumbs" style="none" />
                         </div>
                     </div>
 					<div class="row">
-                        <div class="col-xs-12">
-					        
+                        <div class="col-xs-12">					        
                             <jdoc:include type="message" />
                             <jdoc:include type="component" />
                         </div>
-                    </div>
-                    <div class="row">
-					    <jdoc:include type="modules" name="position-5" style="bsrow" />    
-					</div>
+                    </div>                    
+				    <jdoc:include type="modules" name="position-5" style="bsrow" />					
 					<!-- End Content -->
 				</div>
                 <?php if ($this->countModules('position-7')) : ?>
-                <aside id="right-sidebar" class="col-sm-3">
-                    <div class="row">
-                        <jdoc:include type="modules" name="position-7" style="bsrow" />
-                    </div>
+                <aside id="right-sidebar" class="col-sm-3">                    
+                    <jdoc:include type="modules" name="position-7" style="bsrow" />                    
                 </aside>
 				<?php endif; ?>
             </main>
