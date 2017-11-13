@@ -135,8 +135,8 @@ else
                 </aside>
 				<?php endif; ?>
                 <div id="main-body" class="<?php echo $span; ?>">
-					<!-- Begin Content -->					
-				    <jdoc:include type="modules" name="position-4" style="bsrow" />    
+					<!-- Begin Content -->
+                    <jdoc:include type="modules" name="position-4" style="bsrow" />					
 					<div class="row">
                         <div class="col-xs-12">
                             <jdoc:include type="module" name="breadcrumbs" style="none" />
