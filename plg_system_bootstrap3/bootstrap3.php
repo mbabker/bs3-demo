@@ -200,7 +200,7 @@ class PlgSystemBootstrap3 extends JPlugin
 	{	
 		$name = isset($params['name']) ? $params['name'] : 'frmModal';
 		$content = isset($params['content']) ? $params['content'] : 'Modal content';
-		$titletag = isset($params['titletag']) ? $params['titletag'] : '<h3/>';
+		$titletag = isset($params['titletag']) ? $params['titletag'] : 'h3';
 		$title = isset($params['title']) ? $params['title'] : 'Title';
 		
 		// Include jQuery
@@ -226,7 +226,7 @@ class PlgSystemBootstrap3 extends JPlugin
                                 })
                             ).html('&times;')
                         ).append(
-                            jQuery('$titletag',{
+                            jQuery('<$titletag/>',{
                                 class:  'modal-title',
                                 id:     '{$name}Label'
                             }).html('$title')
