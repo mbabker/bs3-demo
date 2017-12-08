@@ -1,0 +1,7 @@
+[ ] Add Joomla package for both plug-in and template
+[+] Style for html/mod_search
+[ ] Needs styles for other Joomla moduls and components
+[ ] Add LICENSE.txt
+[ ] Replace text Brand ad Toggle navigation as JText::_()
+[ ] Dropdown navbars
+[+] Add with jQuery css for body, when navbar is fixed to top or bottom
